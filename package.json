@@ -1,0 +1,16 @@
+{
+	"name" : "com.rito.unity-utility-library-2023",
+	"version": "1.0.0",
+	"displayName" :"Rito Unity Utility Library 2023",
+	"description" :".",
+	"unity": "2021.3",
+	"dependencies": {},
+	"keywords": ["rito","unity","utility"],
+	"author":
+	{
+		"name":"Rito",
+		"email":"ghdtkals15@gmail.com",
+		"url":"https://github.com/rito15"
+	},
+	"category": "Unity"
+}
