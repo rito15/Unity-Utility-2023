@@ -17,8 +17,9 @@ using UnityEngine;
 /*
    [ 기록]
    2023. 03. 26.
-   - Ut23 라이브러리에 편입
-   - 이름 규칙 변경: 항상 EX_ 접두어 사용
+     - Ut23 라이브러리에 편입
+     - 이름 규칙 변경: 항상 EX_ 접두어 사용
+     - Clamp() 메소드 종류 추가
 */
 
 namespace Rito.ut23.Extensions
@@ -29,32 +30,74 @@ namespace Rito.ut23.Extensions
         *                               Range, Clamp
         ***********************************************************************/
         #region .
-        /// <summary> Inclusive Range (min &lt;= value &lt;= max) </summary>
+        /// <summary> (min &lt;= value &lt;= max) </summary>
         [TestCompleted(2021, 06, 17)]
         public static bool EX_InRange(in this float value, in float min, in float max)
             => min <= value && value <= max;
 
-        /// <summary> Exclusive Range (min &lt; value &lt; max) </summary>
+        /// <summary> (min &lt; value &lt; max) </summary>
         [TestCompleted(2021, 06, 17)]
         public static bool EX_ExRange(in this float value, in float min, in float max)
             => min < value && value < max;
 
+        /// <summary> (min &lt;= value &lt; max) </summary>
+        [TestCompleted(2023, 03, 26)]
+        public static bool EX_InExRange(in this float value, in float min, in float max)
+            => min <= value && value < max;
+
+        /// <summary> (min &lt; value &lt;= max) </summary>
+        [TestCompleted(2023, 03, 26)]
+        public static bool EX_ExInRange(in this float value, in float min, in float max)
+            => min < value && value <= max;
+
+
         /// <summary> 값의 범위 제한 </summary>
         [TestCompleted(2021, 06, 17)]
-        public static float Clamp(in this float value, in float min, in float max)
+        public static float EX_Clamp(in this float value, in float min, in float max)
         {
             if (value < min) return min;
             if (value > max) return max;
             return value;
         }
+        /// <summary> 값의 최소 범위 제한 </summary>
+        [TestCompleted(2023, 03, 26)]
+        public static float EX_ClampMin(in this float value, in float min)
+        {
+            if (value < min) return min;
+            return value;
+        }
+        /// <summary> 값의 최대 범위 제한 </summary>
+        [TestCompleted(2023, 03, 26)]
+        public static float EX_ClampMax(in this float value, in float max)
+        {
+            if (value > max) return max;
+            return value;
+        }
+
 
         /// <summary> 값의 범위 제한 </summary>
         [TestCompleted(2021, 06, 17)]
-        public static void EX_ClampRef(ref this float value, in float min, in float max)
+        public static float EX_ClampRef(ref this float value, in float min, in float max)
         {
             if (value < min) value = min;
             if (value > max) value = max;
+            return value;
         }
+        /// <summary> 값의 최소 범위 제한 </summary>
+        [TestCompleted(2023, 03, 26)]
+        public static float EX_ClampMinRef(ref this float value, in float min)
+        {
+            if (value < min) value = min;
+            return value;
+        }
+        /// <summary> 값의 최대 범위 제한 </summary>
+        [TestCompleted(2023, 03, 26)]
+        public static float EX_ClampMaxRef(ref this float value, in float max)
+        {
+            if (value > max) value = max;
+            return value;
+        }
+
 
         /// <summary> 0 ~ 1 범위로 제한 </summary>
         [TestCompleted(2021, 06, 17)]

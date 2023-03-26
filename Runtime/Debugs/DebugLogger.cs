@@ -1,8 +1,12 @@
-#if !RITO_UT23_ALLOW_RUNTIME_DEBUG
+#if RITO_UT23_ALLOW_RUNTIME_DEBUG
 
-    #if UNITY_EDITOR
-    #define RITO_UT23_UNITY_EDITOR_ONLY
-    #endif
+#define RITO_UT23_EDITOR_ONLY_SWITCH
+
+#else
+
+#if UNITY_EDITOR
+#define RITO_UT23_EDITOR_ONLY_SWITCH
+#endif
 
 #endif
 
@@ -24,7 +28,7 @@ namespace Rito.ut23.Debugs
 {
     using static CommonDefinitions;
 
-    /// <summary> 디버그 래퍼 클래스 </summary>
+    /// <summary> 디버그 래퍼 클래스(플래그에 따라 에디터 전용/런타임 허용) </summary>
     public static class Debug
     {
         /***********************************************************************
