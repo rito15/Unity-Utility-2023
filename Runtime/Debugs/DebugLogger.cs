@@ -24,6 +24,14 @@ using Object = UnityEngine.Object;
    2023. 03. 26.
    - Ut23 라이브러리에 편입
 */
+/*
+    [이슈]
+    2023. 03. 26.
+    - `#define`으로 정의한 심볼이 `[Conditional()]`에 적용되지 않음( #if에는 정상 적용됨 )
+    - 유니티 에디터의 Scripting Define Symbol처럼 미리 정의된 심볼만 `[Conditional()]`에 적용되는 것으로 확인
+    - 해결 방안
+      - 
+*/
 namespace Rito.ut23.Debugs
 {
     using static CommonDefinitions;
