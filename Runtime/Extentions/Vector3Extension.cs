@@ -12,7 +12,7 @@ using UnityEngine;
    [ 기록]
    2023. 03. 26.
    - Ut23 라이브러리에 편입
-   - 이름 규칙 변경: 항상 EX_ 접두어 사용
+   - 이름 규칙 변경: 항상 Ex_ 접두어 사용
 */
 
 namespace Rito.ut23.Extensions
@@ -25,12 +25,12 @@ namespace Rito.ut23.Extensions
         #region .
         /// <summary> (x1 * x2, y1 * y2, z1 * z2) </summary>
         [TestCompleted(2021, 06, 17)]
-        public static Vector3 EX_Multiply(in this Vector3 @this, in Vector3 other)
+        public static Vector3 Ex_Multiply(in this Vector3 @this, in Vector3 other)
             => new Vector3(@this.x * other.x, @this.y * other.y, @this.z * other.z);
 
         /// <summary> (x1 / x2, y1 / y2, z1 / z2) </summary>
         [TestCompleted(2021, 06, 17)]
-        public static Vector3 EX_Divide(in this Vector3 @this, in Vector3 other)
+        public static Vector3 Ex_Divide(in this Vector3 @this, in Vector3 other)
             => new Vector3(@this.x / other.x, @this.y / other.y, @this.z / other.z);
 
         #endregion
@@ -38,18 +38,18 @@ namespace Rito.ut23.Extensions
         *                               Setters
         ***********************************************************************/
         #region .
-        public static Vector3 EX_SetX(in this Vector3 @this, in float x)
+        public static Vector3 Ex_SetX(in this Vector3 @this, in float x)
             => new Vector3(x, @this.y, @this.z);
-        public static Vector3 EX_SetY(in this Vector3 @this, in float y)
+        public static Vector3 Ex_SetY(in this Vector3 @this, in float y)
             => new Vector3(@this.x, y, @this.z);
-        public static Vector3 EX_SetZ(in this Vector3 @this, in float z)
+        public static Vector3 Ex_SetZ(in this Vector3 @this, in float z)
             => new Vector3(@this.x, @this.y, z);
 
-        public static Vector3 EX_SetXY(in this Vector3 @this, in float x, in float y)
+        public static Vector3 Ex_SetXY(in this Vector3 @this, in float x, in float y)
             => new Vector3(x, y, @this.z);
-        public static Vector3 EX_SetYZ(in this Vector3 @this, in float y, in float z)
+        public static Vector3 Ex_SetYZ(in this Vector3 @this, in float y, in float z)
             => new Vector3(@this.x, y, z);
-        public static Vector3 EX_SetXZ(in this Vector3 @this, in float x, in float z)
+        public static Vector3 Ex_SetXZ(in this Vector3 @this, in float x, in float z)
             => new Vector3(x, @this.y, z);
 
         #endregion

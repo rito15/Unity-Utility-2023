@@ -10,7 +10,7 @@ using UnityEngine;
    [ 기록]
    2023. 03. 26.
    - Ut23 라이브러리에 편입
-   - 이름 규칙 변경: 항상 EX_ 접두어 사용
+   - 이름 규칙 변경: 항상 Ex_ 접두어 사용
 */
 
 namespace Rito.ut23.Extensions
@@ -18,7 +18,7 @@ namespace Rito.ut23.Extensions
     public static class GameObjectExtension
     {
         [TestCompleted(2021, 06, 16)]
-        public static T EX_GetOrAddComponent<T>(this GameObject @this)
+        public static T Ex_GetOrAddComponent<T>(this GameObject @this)
             where T : Component
         {
             if (!@this.TryGetComponent(out T component))

@@ -12,7 +12,7 @@ using UnityEngine;
    [ 기록]
    2023. 03. 26.
    - Ut23 라이브러리에 편입
-   - 이름 규칙 변경: 항상 EX_ 접두어 사용
+   - 이름 규칙 변경: 항상 Ex_ 접두어 사용
 */
 
 namespace Rito.ut23.Extensions
@@ -25,7 +25,7 @@ namespace Rito.ut23.Extensions
         #region .
         /// <summary> 조상이 몇 명인지 깊이 구하기 </summary>
         [TestCompleted(2021, 06, 16)]
-        public static int EX_GetUpperDepth(this Transform @this)
+        public static int Ex_GetUpperDepth(this Transform @this)
         {
             int depth = 0;
             Transform current = @this;
@@ -42,7 +42,7 @@ namespace Rito.ut23.Extensions
         /// <para/> - includeSelf : 본인 트랜스폼 포함
         /// </summary>
         [TestCompleted(2021, 06, 16)]
-        public static List<Transform> EX_GetAllDescendants(this Transform @this, bool includeSelf = false)
+        public static List<Transform> Ex_GetAllDescendants(this Transform @this, bool includeSelf = false)
         {
             List<Transform> trList = new List<Transform>(@this.childCount);
             if (includeSelf)
@@ -73,7 +73,7 @@ namespace Rito.ut23.Extensions
 
         /// <summary> 모두 같은 부모 아래 있는지 검사 </summary>
         [TestCompleted(2021, 06, 16)]
-        public static bool EX_HasSameParent(this Transform[] transforms)
+        public static bool Ex_HasSameParent(this Transform[] transforms)
         {
             if (transforms == null || transforms.Length == 0)
                 return false;

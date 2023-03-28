@@ -10,7 +10,7 @@ using System.Collections.Generic;
    2020. 05. 17. IsArrayType(), IsArrayOrListType() 작성
    2023. 03. 26.
    - Ut23 라이브러리에 편입
-   - 이름 규칙 변경: 항상 EX_ 접두어 사용
+   - 이름 규칙 변경: 항상 Ex_ 접두어 사용
 */
 
 namespace Rito.ut23.Extensions
@@ -20,7 +20,7 @@ namespace Rito.ut23.Extensions
         /// <summary>
         /// <para/> 네임스페이스 아래의 클래스를 ToString() 하는 경우, 네임스페이스들을 미포함한 클래스명만 리턴
         /// </summary>
-        public static string EX_ToStringSimple(this Type @this)
+        public static string Ex_ToStringSimple(this Type @this)
         {
             string typeString = @this.ToString();
             int dotIndex = typeString.LastIndexOf('.');
@@ -34,25 +34,25 @@ namespace Rito.ut23.Extensions
         /// <summary>
         /// <para/> 타겟 타입의 자식이거나 동일한지 검사
         /// </summary>
-        public static bool EX_IsChildOrEqualsTo(this Type @this, in Type target)
+        public static bool Ex_IsChildOrEqualsTo(this Type @this, in Type target)
         {
             return @this.IsSubclassOf(target) || @this.IsEquivalentTo(target);
         }
 
         /// <summary> 배열 타입인지 검사 </summary>
-        public static bool EX_IsArrayType(this Type @this)
+        public static bool Ex_IsArrayType(this Type @this)
         {
             return @this.IsArray;
         }
 
         /// <summary> 이 타입이 List&lt;타입&gt; 꼴인지 검사 </summary>
-        public static bool EX_IsListType(this Type @this)
+        public static bool Ex_IsListType(this Type @this)
         {
             return @this.IsGenericType && @this.GetGenericTypeDefinition() == typeof(List<>);
         }
 
         /// <summary> 이 타입이 배열 또는 List&lt;타입&gt; 꼴 타입인지 검사 </summary>
-        public static bool EX_IsArrayOrListType(this Type @this)
+        public static bool Ex_IsArrayOrListType(this Type @this)
         {
             return @this.IsArray ||
                 @this.IsGenericType && @this.GetGenericTypeDefinition() == typeof(List<>);
@@ -62,7 +62,7 @@ namespace Rito.ut23.Extensions
         /// <para/> 타겟 배열 타입의 자식이거나 동일한지 검사
         /// <para/> * target은 배열 또는 배열의 엘리먼트 타입으로 지정 가능
         /// </summary>
-        public static bool EX_IsArrayAndChildOf(this Type @this, in Type target)
+        public static bool Ex_IsArrayAndChildOf(this Type @this, in Type target)
         {
             // 1. 배열 타입이 아니면 false 리턴
             if (@this.HasElementType == false) return false;
@@ -94,7 +94,7 @@ namespace Rito.ut23.Extensions
         /// <para/> 이 타입이 List&lt;타입&gt; 꼴인지 검사
         /// <para/> + 지정한 제네릭 타입이 target 타입과 같거나, target의 자식인지 검사
         /// </summary>
-        public static bool EX_IsListAndChildOf(this Type @this, in Type target)
+        public static bool Ex_IsListAndChildOf(this Type @this, in Type target)
         {
             if (@this.IsGenericType == false) return false;
             if (@this.GetGenericTypeDefinition() != typeof(List<>)) return false;

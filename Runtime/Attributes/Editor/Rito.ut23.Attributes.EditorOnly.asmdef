@@ -1,0 +1,18 @@
+{
+    "name": "Rito.ut23.Attributes.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:c867c96e44c36ba479c58de8bb209327"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

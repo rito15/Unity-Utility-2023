@@ -13,7 +13,7 @@ using UnityEngine;
    [ 기록]
    2023. 03. 26.
    - Ut23 라이브러리에 편입
-   - 이름 규칙 변경: 항상 EX_ 접두어 사용
+   - 이름 규칙 변경: 항상 Ex_ 접두어 사용
 */
 
 namespace Rito.ut23.Extensions
@@ -48,7 +48,7 @@ namespace Rito.ut23.Extensions
 #if !RITO_UT23_ALLOW_RUNTIME_DEBUG
         [Conditional(UNITY_EDITOR)]
 #endif
-        public static void EX_Log<T>(this T @this)
+        public static void Ex_Log<T>(this T @this)
         {
             Debug.Log(@this);
         }
@@ -57,7 +57,7 @@ namespace Rito.ut23.Extensions
 #if !RITO_UT23_ALLOW_RUNTIME_DEBUG
         [Conditional(UNITY_EDITOR)]
 #endif
-        public static void EX_Log<T>(this T @this, params object[] postfix)
+        public static void Ex_Log<T>(this T @this, params object[] postfix)
         {
             Debug.Log(@this + BuildString(postfix));
         }
@@ -66,7 +66,7 @@ namespace Rito.ut23.Extensions
 #if !RITO_UT23_ALLOW_RUNTIME_DEBUG
         [Conditional(UNITY_EDITOR)]
 #endif
-        public static void EX_LogError<T>(this T @this)
+        public static void Ex_LogError<T>(this T @this)
         {
             Debug.LogError(@this);
         }
@@ -75,7 +75,7 @@ namespace Rito.ut23.Extensions
 #if !RITO_UT23_ALLOW_RUNTIME_DEBUG
         [Conditional(UNITY_EDITOR)]
 #endif
-        public static void EX_LogError<T>(this T @this, params object[] postfix)
+        public static void Ex_LogError<T>(this T @this, params object[] postfix)
         {
             Debug.LogError(@this + BuildString(postfix));
         }
@@ -91,7 +91,7 @@ namespace Rito.ut23.Extensions
 #if !RITO_UT23_ALLOW_RUNTIME_DEBUG
         [Conditional(UNITY_EDITOR)]
 #endif
-        public static void EX_Assert<T>(this T @this, T other)
+        public static void Ex_Assert<T>(this T @this, T other)
         {
             if (!@this.Equals(other))
                 Debug.LogError($"Assertion Failed : [{@this}] must be [{other}]");
