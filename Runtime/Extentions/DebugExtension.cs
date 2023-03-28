@@ -1,15 +1,3 @@
-#if RITO_UT23_ALLOW_RUNTIME_DEBUG
-
-#define RITO_UT23_EDITOR_ONLY_SWITCH
-
-#else
-
-#if UNITY_EDITOR
-#define RITO_UT23_EDITOR_ONLY_SWITCH
-#endif
-
-#endif
-
 #pragma warning disable CS1591
 
 using System;
@@ -31,6 +19,7 @@ using UnityEngine;
 namespace Rito.ut23.Extensions
 {
     using static CommonDefinitions;
+    using Conditional = System.Diagnostics.ConditionalAttribute;
 
     public static class DebugExtension
     {
@@ -56,28 +45,36 @@ namespace Rito.ut23.Extensions
         ***********************************************************************/
         #region .
         [TestCompleted(2021, 06, 17)]
-        [System.Diagnostics.Conditional(RITO_UT23_EDITOR_ONLY_SWITCH)]
+#if !RITO_UT23_ALLOW_RUNTIME_DEBUG
+        [Conditional(UNITY_EDITOR)]
+#endif
         public static void EX_Log<T>(this T @this)
         {
             Debug.Log(@this);
         }
 
         [TestCompleted(2021, 06, 17)]
-        [System.Diagnostics.Conditional(RITO_UT23_EDITOR_ONLY_SWITCH)]
+#if !RITO_UT23_ALLOW_RUNTIME_DEBUG
+        [Conditional(UNITY_EDITOR)]
+#endif
         public static void EX_Log<T>(this T @this, params object[] postfix)
         {
             Debug.Log(@this + BuildString(postfix));
         }
 
         [TestCompleted(2021, 06, 17)]
-        [System.Diagnostics.Conditional(RITO_UT23_EDITOR_ONLY_SWITCH)]
+#if !RITO_UT23_ALLOW_RUNTIME_DEBUG
+        [Conditional(UNITY_EDITOR)]
+#endif
         public static void EX_LogError<T>(this T @this)
         {
             Debug.LogError(@this);
         }
 
         [TestCompleted(2021, 06, 17)]
-        [System.Diagnostics.Conditional(RITO_UT23_EDITOR_ONLY_SWITCH)]
+#if !RITO_UT23_ALLOW_RUNTIME_DEBUG
+        [Conditional(UNITY_EDITOR)]
+#endif
         public static void EX_LogError<T>(this T @this, params object[] postfix)
         {
             Debug.LogError(@this + BuildString(postfix));
@@ -91,7 +88,9 @@ namespace Rito.ut23.Extensions
         /// 값을 평가하여, 틀릴 경우 콘솔 에러 출력
         /// </summary>
         [TestCompleted(2021, 06, 17)]
-        [System.Diagnostics.Conditional(RITO_UT23_EDITOR_ONLY_SWITCH)]
+#if !RITO_UT23_ALLOW_RUNTIME_DEBUG
+        [Conditional(UNITY_EDITOR)]
+#endif
         public static void EX_Assert<T>(this T @this, T other)
         {
             if (!@this.Equals(other))

@@ -44,13 +44,15 @@ namespace Rito.ut23.Extensions
         /***********************************************************************
         *                               Debug
         ***********************************************************************/
-#region .
+        #region .
 
         /// <summary> 디버그 로그 창에 배열의 모든 내용 출력
         /// <para/> seperator : 각 요소를 구분할 구분자(기본 : 공백 1칸)
         /// <para/> showIndex : 각 요소 앞에 [n] 표시할지 여부
         /// </summary>
-        [Conditional(RITO_UT23_EDITOR_ONLY_SWITCH)]
+#if !RITO_UT23_ALLOW_RUNTIME_DEBUG
+        [Conditional(UNITY_EDITOR)]
+#endif
         public static void Ex_LogAllElements<T>(this IEnumerable<T> @this, string seperator = " ", bool showIndex = false)
         {
             System.Text.StringBuilder sb = new System.Text.StringBuilder();

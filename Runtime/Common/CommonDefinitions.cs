@@ -22,7 +22,7 @@ namespace Rito.ut23
     {
         public const string UNITY_EDITOR = "UNITY_EDITOR";
         //public const string RITO_UT23_EDITOR_ONLY_SWITCH = "RITO_UT23_EDITOR_ONLY_SWITCH";
-        public const string RITO_UT23_EDITOR_ONLY_SWITCH = "RITO_UT23_ALLOW_RUNTIME_DEBUG";
+        //public const string RITO_UT23_EDITOR_ONLY_SWITCH = "RITO_UT23_ALLOW_RUNTIME_DEBUG";
         //public const string RITO_UT23_EDITOR_ONLY_SWITCH = "UNITY_EDITOR";
 
         // 에디터 정의 플래그 //
