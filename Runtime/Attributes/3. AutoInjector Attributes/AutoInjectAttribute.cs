@@ -27,9 +27,9 @@ namespace Rito.ut23.Attributes
         GetComponentInChildren,
         /// <summary> 자기 게임오브젝트를 제외하고 자식 게임오브젝트들을 대상으로 수행합니다. </summary>
         GetComponentInChildrenOnly,
-        GetComponentInparent,
+        GetComponentInParents,
         /// <summary> 자기 게임오브젝트를 제외하고 부모 게임오브젝트들을 대상으로 수행합니다. </summary>
-        GetComponentInparentOnly,
+        GetComponentInParentsOnly,
 
         FindObjectOfType
     }

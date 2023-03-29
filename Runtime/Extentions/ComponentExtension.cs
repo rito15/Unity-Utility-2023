@@ -75,7 +75,7 @@ namespace Rito.ut23.Extensions
 
             for (int i = 0; i < childCount; i++)
             {
-                Component targetComponent = transform.GetChild(0).GetComponentInChildren(targetType);
+                Component targetComponent = transform.GetChild(i).GetComponentInChildren(targetType);
                 if (targetComponent != null)
                     return targetComponent;
             }

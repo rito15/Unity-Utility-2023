@@ -85,11 +85,11 @@ namespace Rito.ut23.Attributes
                         property.objectReferenceValue = target.Ex_GetComponentInChildrenOnly(fieldType);
                         break;
 
-                    case EInjection.GetComponentInparent:
+                    case EInjection.GetComponentInParents:
                         property.objectReferenceValue = target.GetComponentInParent(fieldType);
                         break;
 
-                    case EInjection.GetComponentInparentOnly:
+                    case EInjection.GetComponentInParentsOnly:
                         property.objectReferenceValue = target.Ex_GetComponentInParentOnly(fieldType);
                         break;
 
