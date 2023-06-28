@@ -18,7 +18,7 @@ namespace Rito.ut23.BuildTool
     [CreateAssetMenu(fileName = "new-build-definition", menuName = "Build Definition")]
     public class BuildDefinition : ScriptableObject
     {
-        public string LocationPathName = "Relative/Path/Build";
+        public string LocationPathName = "Builds/PC/BuildName";
         public string ProductNameOverride;
         public string CompanyNameOverride;
         public BuildTarget BuildTarget;
